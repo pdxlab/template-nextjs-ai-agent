@@ -1,0 +1,23 @@
+# TR (Trust Review) is pre-installed. Add TRUSTMODEL_API_KEY to your repo secrets.
+name: Trust Review
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+permissions:
+  pull-requests: write
+  statuses: write
+
+jobs:
+  trust-review:
+    name: Trust Review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pdxlab/trustmodel-review-action@v1
+        with:
+          api-key: ${{ secrets.TRUSTMODEL_API_KEY }}

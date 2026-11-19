@@ -1,0 +1,6 @@
+threshold: 70
+mode: advisory
+# Trust Review (TR) configuration.
+# threshold: minimum TrustScore (0-100) required to pass.
+# mode: advisory (report only) | gate (block merge below threshold).
+# See https://trustmodel.ai/developers for all options.
